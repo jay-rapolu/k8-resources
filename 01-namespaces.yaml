@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: Project-Name
+  name: project-name
   labels:
     environment: test
     team: joindevops
