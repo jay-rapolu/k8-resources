@@ -5,7 +5,7 @@ metadata:
   labels:
     project: poc
     development: environment
-  spec:
-    containers:
-    - name: nginx
-      image: nginx:latest
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
