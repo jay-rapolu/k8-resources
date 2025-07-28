@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: environment-config
+data:
+  Course: "DevOps"
+  Environment: "Online"
+  Duration: "10 months"
