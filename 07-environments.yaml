@@ -10,7 +10,7 @@ metadata:
 spec:
   containers:
   - name: web
-    image: nginx:1.4
+    image: nginx
     ports:
     - containerPort: 80
     resources:
