@@ -6,7 +6,7 @@ metadata:
   region: us-east-1
 
 managedNodeGroups:
-  - name: nodes
+  - name: worker
     instanceType: t3.small
     desiredCapacity: 2
     spot: true
