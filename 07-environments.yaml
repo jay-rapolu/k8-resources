@@ -22,7 +22,7 @@ spec:
         cpu: "500m"
     env:
       - name: Project
-        value: Environment
+        value: Environment Variables
       - name: Owner
         value: Jayachandra
       - name: Tool
