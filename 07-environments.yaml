@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: environment-variables
+  labels:
+    project: env
+    environment: test
+  annotations:
+    purpose: this manifest file helps in how to define env environment-variables
+spec:
+  containers:
+  - name: web
+    image: nginx
+    ports:
+    - containerPort: 80
+    resources:
+      requests:
+        memory: "128Mi"
+        cpu: "250m"
+      limits:
+        memory: "256Mi"
+        cpu: "500m"
+    env:
+      Project: Environment
+      Owner: Jayachandra
+      Tool: Kubernetes
