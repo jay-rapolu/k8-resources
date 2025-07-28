@@ -5,7 +5,7 @@ metadata:
   labels:
     project: annotations
     environment: test
-    kubernetes: true
+    kubernetes: "true"
   annotations:
     purpose: this resource is created to demonstrate the annotations in k8s manifest file
 spec:
