@@ -20,7 +20,7 @@ spec:
       limits:
         memory: "256Mi"
         cpu: "500m"
-    environment:
+    environments:
       Project: Environment
       Owner: Jayachandra
       Tool: Kubernetes
