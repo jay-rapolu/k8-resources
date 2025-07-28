@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annotations-test
+  labels:
+    project: annotations
+    environment: test
+    kubernetes: true
+  annotations:
+    purpose: this resource is created to demonstrate the annotations in k8s manifest file
+spec:
+  containers:
+  - name: web
+    image: nginx
+    ports:
+    - containerPort: 80
