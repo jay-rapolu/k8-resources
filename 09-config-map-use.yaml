@@ -16,5 +16,5 @@ spec:
         cpu: "500m"
         memory: "256Mi"
     envFrom:
-      configMapRef:
-      - environment-config
+      - configMapRef:
+          name: environment-config
