@@ -12,3 +12,18 @@ spec:
     image: nginx
     ports:
     - containerPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: label-demo-test
+  labels:
+    environment: test
+    project: dummy
+    owner: "jay"
+spec:
+  containers:
+  - name: web-app
+    image: nginx
+    ports:
+    - containerPort: 80
