@@ -13,7 +13,7 @@ spec:
     image: nginx
     ports:
     - containerPort: 80
-    resource:
+    resources:
       requests: # soft limit
         memory: "128Mi"
         cpu: "250m"
