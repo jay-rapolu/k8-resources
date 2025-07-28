@@ -21,6 +21,9 @@ spec:
         memory: "256Mi"
         cpu: "500m"
     env:
-      - Project: Environment
-      - Owner: Jayachandra
-      - Tool: Kubernetes
+      - name: Project
+        value: Environment
+      - name: Owner
+        value: Jayachandra
+      - name: Tool
+        value: Kubernetes
