@@ -5,7 +5,7 @@ metadata:
   labels:
     project: learning
     environment: test
-  annotations: This is the manifest file to test resource limit
+  annotations: "This is the manifest file to test resource limit"
 spec:
   containers:
   - name: web
