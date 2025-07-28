@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: label-demo
+  labels:
+    environment: test
+    project: dummy
+    owner: "jayachandra"
+spec:
+  containers:
+  - name: web-app
+    image: nginx
+    ports:
+    - ContainerPort: 80
