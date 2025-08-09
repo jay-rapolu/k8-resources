@@ -29,7 +29,7 @@ metadata:
   labels:
     component: web
 spec:
-  selectors:
+  selector:
     component: web
     project: roboshop
     tier: frontend
