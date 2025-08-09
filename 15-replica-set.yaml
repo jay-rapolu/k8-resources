@@ -1,25 +1,26 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: rs-demo
+  name: nginx-rs
   labels:
-    purpose: rs-demo
-    project: roboshop
-    environment: dev
+    app: web
+  annotations:
+    purpose: replicaset demo
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: webapp
-      demo: true
-      image: nginx
+  replicas: 2
   template:
-    metadata:
-      labels:
-        app: webapp
-        demo: true
-        image: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:latest
+    selectors:
+      matchLabels:
+        app: web
+    containers:
+    - name: nginx
+      image: nginx
+    resources:
+      requests:
+        cpu: "250m"
+        memory: "128Mi"
+      limits:
+        cpu: "500m"
+        memory: "256Mi"
+    ports:
+    - containerPort: 80
