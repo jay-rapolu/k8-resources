@@ -8,6 +8,9 @@ metadata:
     purpose: this is deployment demo
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      demo: web
   template:
     metadata:
       name: nginx-pod
