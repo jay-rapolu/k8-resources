@@ -13,13 +13,13 @@ spec:
       app: webapp
       demo: true
       image: nginx
-template:
-  metadata:
-    labels:
-      app: webapp
-      demo: true
-      image: nginx
-  spec:
-    containers:
-    - name: nginx
-      image: nginx:latest
+  template:
+    metadata:
+      labels:
+        app: webapp
+        demo: true
+        image: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
