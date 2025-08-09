@@ -1,25 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rs-demo
+  name: deployment-demo
   labels:
-    purpose: rs-demo
-    project: roboshop
-    environment: dev
+    app: web
+  annotations:
+    purpose: this is deployment demo
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: webapp
-      demo: true
-      image: nginx
+  replicas: 2
   template:
     metadata:
+      name: nginx-pod
       labels:
-        app: webapp
-        demo: true
-        image: nginx
+        demo: web
+      annotations:
+        purpose: deployment demo
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: nginx
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
