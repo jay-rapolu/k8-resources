@@ -15,10 +15,10 @@ spec:
     image: nginx
     volumeMounts:
     - name: ebs-static
-      path: /usr/share/nginx/html
+      mountPath: /usr/share/nginx/html
 ---
 apiVersion: v1
-kind: Service
+kind: Service 
 metadata:
   name: ebs-static
   labels:
