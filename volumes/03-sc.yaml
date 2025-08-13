@@ -1,0 +1,50 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ebs-sc
+provisioner: ebs.csi.aws.com
+volumeBindingMode: WaitForFirstConsumer
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ebs-sc
+spec:
+  storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
+  volumeName: ebs-sc
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 15Gi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    purpose: sc-demo
+    project: roboshop
+spec:
+  volumes:
+  - name: ebs-sc
+    persistentVolumeClaim:
+      claimName: ebs-sc
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: ebs-sc
+      mountPath: /usr/share/nginx/html
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-service
+spec:
+  selector:
+    purpose: sc-demo
+    project: roboshop
+  ports:
+  - port: 80
+    targetPort: 80  
