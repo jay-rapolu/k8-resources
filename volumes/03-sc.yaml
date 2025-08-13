@@ -42,6 +42,7 @@ kind: Service
 metadata:
   name: lb-service
 spec:
+  type: LoadBalancer
   selector:
     purpose: sc-demo
     project: roboshop
