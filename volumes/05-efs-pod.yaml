@@ -21,7 +21,8 @@ kind: Service
 metadata:
   name: nginx-svc
 spec:
-  selectors:
+  type: LoadBalancer
+  selector:
     purpose: efs-demo
   ports:
   - port: 80
