@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: efs-app
+  labels:
+    purpose: efs-demo
 spec:
   containers:
   - name: web
@@ -13,3 +15,14 @@ spec:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: efs-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+spec:
+  selectors:
+    purpose: efs-demo
+  ports:
+  - port: 80
+    targetPort: 80
