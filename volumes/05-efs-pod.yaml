@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: efs-app
+spec:
+  containers:
+  - name: web
+    image: nginx
+    volumeMounts:
+    - name: persistent-storage
+      mountPath: /usr/share/html/nginx
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: efs-claim
