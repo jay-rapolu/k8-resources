@@ -8,5 +8,5 @@ metadata:
 managedNodeGroups:
   - name: worker
     instanceType: c7i-flex.large
-    desiredCapacity: 2
+    desiredCapacity: 3
     spot: true
