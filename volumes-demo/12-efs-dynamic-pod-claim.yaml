@@ -26,6 +26,25 @@ spec:
       mountPath: /usr/share/nginx/html/
 ---
 apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-test-1
+  labels:
+    app: web
+    purpose: efs-demo
+spec:
+  volumes:
+  - name: efs-dynamic-1
+    persistentVolumeClaim:
+      claimName: efs-claim-1
+  containers:
+  - name: nginx-1
+    image: nginx
+    volumeMounts:
+    - name: efs-dynamic-1
+      mountPath: /usr/share/nginx/html/
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: web-svc
