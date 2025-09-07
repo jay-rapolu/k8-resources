@@ -7,9 +7,6 @@ metadata:
     purpose: efs-demo
 spec:
   volumes:
-  - name: efs-dynamic
-    persistentVolumeClaim:
-      claimName: efs-claim
   - name: efs-dynamic-1
     persistentVolumeClaim:
       claimName: efs-claim-1
@@ -18,11 +15,6 @@ spec:
     image: nginx
     volumeMounts:
     - name: efs-dynamic
-      mountPath: /usr/share/nginx/html/
-  - name: nginx-1
-    image: nginx
-    volumeMounts:
-    - name: efs-dynamic-1
       mountPath: /usr/share/nginx/html/
 ---
 apiVersion: v1
