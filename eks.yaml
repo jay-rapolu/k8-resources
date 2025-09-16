@@ -9,4 +9,3 @@ managedNodeGroups:
   - name: Worker
     instanceType: c7i-flex.large
     desiredCapacity: 3
-    spot: true
